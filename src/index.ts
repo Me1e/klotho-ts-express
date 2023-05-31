@@ -13,9 +13,8 @@ const app = express();
 app.use(express.json());
 
 app.post('/tasks', async (req: Request, res: Response) => {
-  const { value } = req.body;
   const key = v4();
-  await tasks.set(key, value);
+  await tasks.set(key, req.body);
   res.status(201).send({
     key,
     value: await tasks.get(key),
@@ -26,19 +25,18 @@ app.get('/tasks', async (req: Request, res: Response) => {
   res.send(Object.fromEntries(await tasks.entries()));
 });
 
-app.get('/tasks/:key', async (req: Request, res: Response) => {
-  const key = req.params.key;
-  const value = await tasks.get(key);
-  res.send({
-    key,
-    value,
-  });
-});
+// app.get('/tasks/:key', async (req: Request, res: Response) => {
+//   const key = req.params.key;
+//   const value = await tasks.get(key);
+//   res.send({
+//     key,
+//     value,
+//   });
+// });
 
 app.patch('/tasks/:key', async (req: Request, res: Response) => {
   const key = req.params.key;
-  const { value } = req.body;
-  await tasks.set(key, value);
+  await tasks.set(key, req.body);
   res.send({
     key,
     value: await tasks.get(key),

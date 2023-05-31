@@ -2,10 +2,9 @@
   "name": "klotho-ts-express",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "serve": "node dist/index.js",
-    "klotho": "tsc && klotho . --app ppap --provider aws",
-    "pulumi": ""
+    "serve": "tsc && node dist/index.js",
+    "up": "tsc && klotho . --app ppap --provider aws && pulumi config set aws:region ap-northeast-2 --cwd 'compiled/' -s 'ppap' && cd compiled && npm i && pulumi up --yes && cd ..",
+    "down": "cd compiled && pulumi destroy --yes && cd .."
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
