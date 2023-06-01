@@ -4,7 +4,7 @@
     "serve": "npx tsc && node dist/index.js",
     "klotho": "npx tsc && klotho . --app klotho-ts-express -p aws",
     "pulumi:up": "cd compiled && pulumi config set aws:region ap-northeast-2 -s 'klotho-ts-express' && npm i && pulumi up && cd ..",
-    "pulumi:down": "cd compiled && pulumi destroy --yes && cd ..",
+    "pulumi:down": "cd compiled && pulumi destroy && cd ..",
     "test": "jest --runInBand"
   },
   "dependencies": {
