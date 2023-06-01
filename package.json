@@ -2,15 +2,22 @@
   "name": "klotho-ts-express",
   "scripts": {
     "serve": "npx tsc && node dist/index.js",
-    "up": "npx tsc && klotho . --app klotho-ts-express -p aws && cd compiled && pulumi config set aws:region ap-northeast-2 -s 'klotho-ts-express' && npm i && pulumi up --yes && cd ..",
-    "down": "cd compiled && pulumi destroy --yes && cd .."
+    "klotho": "npx tsc && klotho . --app klotho-ts-express -p aws",
+    "pulumi:up": "cd compiled && pulumi config set aws:region ap-northeast-2 -s 'klotho-ts-express' && npm i && pulumi up && cd ..",
+    "pulumi:down": "cd compiled && pulumi destroy --yes && cd ..",
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.2",
     "@types/node": "^20.2.5",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }
 }
