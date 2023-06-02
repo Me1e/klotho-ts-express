@@ -1,7 +1,7 @@
 import * as request from 'supertest';
 
 const baseUrl =
-  'https://3619qlsxe0.execute-api.ap-northeast-2.amazonaws.com/stage';
+  'https://lc2oxkzina.execute-api.ap-northeast-2.amazonaws.com/stage';
 
 describe('Task API tests', () => {
   let _taskUuid: string;
@@ -18,7 +18,7 @@ describe('Task API tests', () => {
 
     // Then
     expect(res.status).toBe(201);
-  });
+  }, 10000);
 
   it('Get all tasks', async () => {
     // Given
