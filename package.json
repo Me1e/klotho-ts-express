@@ -2,9 +2,9 @@
   "name": "klotho-ts-express",
   "scripts": {
     "serve": "npx tsc && node dist/index.js",
-    "klotho": "npx tsc && klotho . --app klotho-ts-express -p aws",
-    "pulumi:up": "cd compiled && pulumi config set aws:region ap-northeast-2 -s 'klotho-ts-express' && npm i && pulumi up && cd ..",
-    "pulumi:down": "cd compiled && pulumi destroy && cd ..",
+    "klotho": "npx tsc && klotho . --app todo-api -p aws",
+    "pulumi:up": "cd compiled && pulumi config set aws:region ap-northeast-2 -s 'todo-api' && npm i && pulumi up -s todo-api && cd ..",
+    "pulumi:down": "cd compiled && pulumi destroy -s todo-api && cd ..",
     "test": "jest --runInBand"
   },
   "dependencies": {
