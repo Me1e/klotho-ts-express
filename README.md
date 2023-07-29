@@ -22,7 +22,7 @@ https://klo.dev/docs/tutorials/deploying/
 
 ## Compile and Deploy with Klotho
 
-From the `root directory`, run the terminal commands:
+From the `/`, run the terminal commands:
 
 ```sh
 # Compile the app
@@ -58,7 +58,7 @@ const baseUrl = 'https://<...>.execute-api.<YOUR_REGION>.amazonaws.com/stage/';
 ...
 ```
 
-From the `root directory`, run the terminal commands:
+From the `/`, run the terminal commands:
 
 ```sh
 npm run test
