@@ -84,7 +84,7 @@ From the second request onward, things should be fine.
 
 ## Clean Up
 
-From the `compiled directory`
+From the `/directory`
 
 ```sh
 # Tear down when done
