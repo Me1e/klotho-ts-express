@@ -6,6 +6,7 @@ https://klo.dev/docs/tutorials/deploying/
 
 - Docker
 - Node.js 16.x + (& NPM)
+- Klotho CLI
 - AWS CLI
 
   - An AWS account, set up with either:
